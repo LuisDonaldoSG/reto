@@ -50,42 +50,41 @@ const InfoActor = (props) => {
                     <Header className = "header-hijo">
                         <h1>Películas:</h1>
                     </Header>
- 
-                    {
-                        movies[0] === false ?  (<h1>No hay peliculas que mostrar</h1>) : (
-                            movies.map(movie =>(
 
-                                <Layout className = "layout-hijo" key = {movie.id}>
-                                    <Header  className = "header-hijo-hijo">
-                                        <Row>
-                                            <Col flex={2}>
-                                                <h2 >{movie.title}</h2>
-                                            </Col>
-                                            <Col align = 'end' flex={3} >
-                                                <h4>{movie.calif}</h4>
-                                            </Col>
-                                            <Col align = 'end' flex={0} >
-                                                <StarTwoTone />
-                                            </Col>
-                                        </Row>
-                                    </Header>
-    
-                                    <Layout>
-                                        <Sider justify="space-around" align="middle" style = {{ backgroundColor: 'white'}}>
-                                            <Image
-                                                width={150}
-                                                src= {movie.image}
-                                            />
-                                        </Sider>
-                                        <Content className="content-hijo">
-                                            <p >{movie.overview}</p>
-                                            <h4 >Se estrenó el {movie.date}</h4>
-                                        </Content>
-                                    </Layout>
-                                </Layout>
-                                
+                    {
+                        
+                            movies.map(movie =>(
+                                movie === false ? (null) : (
+                                        <Layout className = "layout-hijo" key = {movie.id}>
+                                        <Header  className = "header-hijo-hijo">
+                                            <Row>
+                                                <Col flex={2}>
+                                                    <h2 >{movie.title}</h2>
+                                                </Col>
+                                                <Col align = 'end' flex={3} >
+                                                    <h4>{movie.calif}</h4>
+                                                </Col>
+                                                <Col align = 'end' flex={0} >
+                                                    <StarTwoTone />
+                                                </Col>
+                                            </Row>
+                                        </Header>
+        
+                                        <Layout>
+                                            <Sider justify="space-around" align="middle" style = {{ backgroundColor: 'white'}}>
+                                                <Image
+                                                    width={150}
+                                                    src= {movie.image}
+                                                />
+                                            </Sider>
+                                            <Content className="content-hijo">
+                                                <p >{movie.overview}</p>
+                                                <h4 >Se estrenó el {movie.date}</h4>
+                                            </Content>
+                                        </Layout>
+                                    </Layout>                            
+                                )                             
                             ))
-                        )
                     }
 
                 </Content>
