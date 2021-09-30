@@ -14,7 +14,7 @@ const DragAndDrop = (props) => {
 
         const image = {
             name: 'file',
-            accept: '.jpg,.png',
+            accept: '.jpg,.png,.JPG,.PNG',
             multiple: false,
             action: 'https://whois.nomada.cloud/upload',
             headers: {
